@@ -14,6 +14,7 @@ export default function () {
 
     --key, -k         Your Stripe secret key
     --url, -u         The local URL to send webhooks
+    --sign, -s        Your Stripe webhook signing secret
     --interval, -i    The interval to poll for new events
     `)
   }
@@ -21,6 +22,7 @@ export default function () {
   stripeLocal({
     secretKey: argv.key || argv.k,
     webhookUrl: argv.url || argv.u,
+    webhookSecret: argv.sign || argv.s,
     interval: argv.interval || argv.i
   })
 }
